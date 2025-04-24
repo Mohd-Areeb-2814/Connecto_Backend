@@ -1,0 +1,16 @@
+server:
+  port: 3336
+
+spring:
+  application:
+    name: UserMS
+  cloud:
+    consul:
+      discovery:
+        hostname: localhost
+      config:
+        enabled: true
+        prefixes: config
+        default-context: application
+        profile-separator: "::"
+        format: YAML

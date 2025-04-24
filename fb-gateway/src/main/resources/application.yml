@@ -1,0 +1,45 @@
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000/"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - PATCH
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: UserMS
+          uri: lb://UserMS
+          predicates:
+            - Path=/user-api/v1/users/**, /auth/**
+          filters:
+            - AuthenticationFilter
+        - id: PostsMS
+          uri: lb://PostMS
+          predicates:
+            - Path=/post-service/posts/**, /post-service/likes/**, /post-service/api/comments/**
+          filters:
+            - AuthenticationFilter
+        - id: FriendProfileMS
+          uri: lb://FriendProfileMS
+          predicates:
+            - Path=
+          filters:
+            - AuthenticationFilter
+        - id: FriendRequestMS
+          uri: lb://FriendRequestMS
+          predicates:
+            - Path=
+          filters:
+            - AuthenticationFilter
+  #Add the routes here
