@@ -9,11 +9,8 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-
 @RequestMapping("/likes")
-
 @CrossOrigin
-
 @Validated
 public class LikeController {
 
@@ -21,7 +18,6 @@ public class LikeController {
     private LikeService likeService;
 
     @Value("${file.upload-dir}")
-
     private String uploadDir;
 
     @PostMapping("/toggle")

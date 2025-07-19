@@ -1,8 +1,8 @@
 server:
-  port: 3336
+  port: 9900
 
 spring:
   application:
-    name: user
+    name: friend-request
   config:
     import: "optional:configserver:http://localhost:8071/"

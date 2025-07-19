@@ -33,24 +33,18 @@ import java.nio.file.Paths;
 import java.util.*;
 
 @RestController
-
 @CrossOrigin
-
 @RequestMapping("/user-api/v1/users")
-
 @Validated
 public class UserController {
 
     @Autowired
-
     private AuthService authService;
 
     @Autowired
-
     private UserService userService;
 
     @Autowired
-
     private AuthenticationManager authenticationManager;
 
     @Autowired
@@ -61,7 +55,6 @@ public class UserController {
     private UserRepository userRepository;
 
     @Value("${file.upload-dir}")
-
     private String uploadDir;
 
     // Register User

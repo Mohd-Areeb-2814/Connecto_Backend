@@ -16,6 +16,7 @@
         <module>friend-profile</module>
         <module>friend-request</module>
 		<module>user</module>
+        <module>configserver</module>
     </modules>
 
     
