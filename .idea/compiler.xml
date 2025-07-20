@@ -7,18 +7,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="eurekaserver" />
         <module name="friend-profile" />
+        <module name="fb-gateway" />
         <module name="configserver" />
         <module name="friend-request" />
         <module name="posts" />
         <module name="user" />
-        <module name="fb-gateway" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="configserver" options="-parameters" />
+      <module name="eurekaserver" options="-parameters" />
       <module name="fb-gateway" options="-parameters" />
       <module name="friend-profile" options="-parameters" />
       <module name="friend-request" options="-parameters" />

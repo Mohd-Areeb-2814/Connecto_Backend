@@ -17,6 +17,7 @@
         <module>friend-request</module>
 		<module>user</module>
         <module>configserver</module>
+        <module>eurekaserver</module>
     </modules>
 
     
